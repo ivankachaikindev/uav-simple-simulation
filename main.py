@@ -15,7 +15,12 @@ def main(drone_ip):
 
 
 def __connect_to_drone(drone_ip):
-    drone = connect(drone_ip, wait_ready=True, heartbeat_timeout=60)
+    drone = connect(
+        drone_ip,
+        wait_ready=True,
+        timeout=60,
+        heartbeat_timeout=60
+    )
     return drone
 
 
