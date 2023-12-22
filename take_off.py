@@ -36,4 +36,4 @@ def __take_off_to_target_altitude(drone, target_altitude):
 
 
 def __drone_reached_target_altitude(drone, target_altitude):
-    return drone.location.global_relative_frame.alt >= target_altitude * 0.95
+    return drone.location.global_relative_frame.alt >= target_altitude * 0.995
