@@ -1,3 +1,4 @@
+import math
 import time
 
 from dronekit import mavutil
@@ -11,7 +12,7 @@ def set_yaw(drone, target_yaw):
 
 
 def __send_mavlink_message_setting_yaw(drone, target_yaw):
-    speed = 5
+    speed = 10
     direction = 1
     is_relative = 0
     mavlink_message = drone.message_factory.command_long_encode(
@@ -36,5 +37,6 @@ def __wait_for_setting_yaw(drone, target_yaw):
 
 def __drone_reached_target_yaw(drone, target_yaw):
     current_yaw = drone.attitude.yaw
+    current_yaw = current_yaw * 180 / math.pi + 360
     diff = abs(target_yaw - current_yaw)
     return diff < 0.1
