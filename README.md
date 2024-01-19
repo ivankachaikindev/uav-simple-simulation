@@ -1,2 +1,2 @@
-# uav-dev-assessment
-Assessment for UAV Software Engineer position
+# uav-simple-simulation
+Simple simulation with UAV using dronekit and mission planner
